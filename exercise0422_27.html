@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+
+/*預設圖a*/
+.container {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 600px;
+    padding: 15px;
+    /* 使用 flex 讓綠、藍、灰三個大區塊上下排列，並設定間距 */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.top-section {
+    background-color: #aecd5a; /* 綠色 */
+    height: 100px;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.middle-section {
+    display: grid;
+    gap: 15px; /* 區塊之間的間距 */
+    /* 手機版預設：1欄 (堆疊) */
+    grid-template-columns: 1fr;
+}
+
+.middle-box {
+    background-color: #55b6c7; /* 藍綠色 */
+    height: 60px;
+    border-radius: 4px;
+}
+
+.bottom-section {
+    display: grid;
+    gap: 15px;
+    /* 手機版預設2欄 */
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.bottom-box {
+    background-color: #e9ecef; /* 淺灰色 */
+    height: 50px;
+    border-radius: 4px;
+}
+
+@media screen and  (min-width: 480px) {
+.middle-section {
+    /* 螢幕大於等於 480px 時，中間區塊變成 3 欄 */
+    grid-template-columns: repeat(3, 1fr);
+}
+.middle-box {
+    /* 桌面版可以稍微調整高度讓比例更好看 */
+    height: 120px;
+}
+.bottom-section {
+    /* 螢幕大於等於 480px 時，下方區塊變成 4 欄 */
+    grid-template-columns: repeat(4, 1fr);
+}
+.bottom-box {
+    height: 60px;
+}
+}
+
+</style>
+</head>
+
+<body>
+
+
+<div class="container">
+
+<!-- 上方1個綠色區塊 -->
+<div class="top-section"></div>
+
+<!-- 中間3個藍色區塊 -->
+<div class="middle-section">
+    <div class="middle-box"></div>
+    <div class="middle-box"></div>
+    <div class="middle-box"></div>
+</div>
+
+<!-- 下方4個灰色區塊 -->
+<div class="bottom-section">
+    <div class="bottom-box"></div>
+    <div class="bottom-box"></div>
+    <div class="bottom-box"></div>
+    <div class="bottom-box"></div>
+</div>
+
+</div>
+
+
+
+</body>
+
+</html>
