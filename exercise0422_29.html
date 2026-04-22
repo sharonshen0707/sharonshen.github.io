@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- 引入 Bootstrap 3 的 CSS 檔案 (必須放在 <head> 裡面) -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<style>
+/* 讓各個元件之間有一點上下間距，比較好看 */
+    body {
+        background-color: white;
+        padding: 10px 5px;
+        }
+    
+    .spacing-bottom {
+        margin-bottom: 20px;
+    }
+
+</style>
+</head>
+
+<body>
+
+<!-- 題目要求 1:A <div> with class="container" -->
+<div class="container">
+        
+    <!-- 題目要求 2:A <div> with class="jumbotron" -->
+    <div class="jumbotron spacing-bottom">
+        <h1>My First Bootstrap Page</h1>
+    </div>
+
+    <!-- 題目要求 3:A <input> with type="text", class="form-control" -->
+    <div class="form-group spacing-bottom">
+        <label>Input:</label>
+        <input type="text" class="form-control">
+    </div>
+
+    <!-- 題目要求 4:A <div> with class="alert alert-success" -->
+    <div class="alert alert-success spacing-bottom">
+        Successful alert
+    </div>
+
+    <!-- 題目要求 5 & 6:Button 搭配 Badge -->
+    <div>
+        <!-- A <button> with class="btn btn-default" -->
+        <button type="button" class="btn btn-default">Button</button>
+            
+        <!-- A <span> with class="badge" -->
+        <span class="badge">badge</span>
+    </div>
+</div>
+
+</body>
+
+</html>
