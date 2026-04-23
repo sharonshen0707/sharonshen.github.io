@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+<!--載入字體-->
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+    background-color: #f5f5f5;
+}
+input[type="button"]{
+    border-radius: 8px;
+    height: 22px;
+    background-color: #ffffff;
+    border: 1px solid #2f2f2f;
+    padding: 0 18px;
+
+    font-family: 'Roboto', sans-serif;
+    font-size: 13px;
+    color: #2f2f2f;
+    cursor: pointer;
+}
+
+.container {
+    width: 496px; /* 設計圖外框寬度 */
+    background-color: #ffffff;
+    border: 1px solid #cfddff;
+}
+
+.header {
+    text-align: right; /* 讓按鈕靠右 */
+    padding: 6px 15px;
+    border-bottom: 1px solid #cfddff;
+}
+
+.image-area {
+    background-color: #ffcca3;
+    padding: 20px;
+    text-align: center;
+}
+
+.image-area img {
+    width: 450px;
+    height: 240px;
+    object-fit: cover;
+}
+
+
+/* 詳細資訊區塊預設為不顯示 (display: none) */
+.info-details {
+    display: none;
+    border-top: 1px solid #cfddff;
+}
+
+/* 當被 JavaScript 加上 show 類別時，改為顯示 (display: block) */
+.info-details.show {
+    display: block;
+}
+
+/* 簡單設定一下列表文字的樣式 */
+.info-details p {
+    margin: 0;
+    padding: 8px 20px;
+    font-size: 12px;
+    color: #2f2f2f;
+    background-color: #ccffcc;
+}
+
+</style>
+</head>
+
+<body>
+<div class="container">
+    <!-- 頂部按鈕區 -->
+    <div class="header">
+        <form>
+            <!-- 加上 id 讓 JavaScript 找得到這顆按鈕 -->
+            <input type="button" id="infoBtn" value="查看資訊">
+        </form>
+    </div>
+
+    <!-- 圖片區塊 -->
+    <div class="image-area">
+        <img src="https://www.w3schools.com/css/img_5terre_wide.jpg" alt="風景圖">
+    </div>
+
+    <!-- 展開資訊區塊 (加上 id 讓 JavaScript 控制) -->
+    <div id="infoBox" class="info-details">
+        <p>修改日期 : 2017/10/12</p>
+        <p>類別 : JPG</p>
+        <p>大小 : 466.97KB</p>
+        <p>路徑 : \\designcenter.qnap.com.tw\DesignCenter\PM...</p>
+    </div>
+</div>
+
+<!-- JavaScript 寫在這裡 -->
+<script>
+    const btn = document.getElementById('infoBtn');
+    const infoBox = document.getElementById('infoBox');
+
+    btn.addEventListener('click', function() {
+        // 切換 .show 類別來顯示或隱藏下方的資訊區塊
+        infoBox.classList.toggle('show');
+
+        // 【重要差異】因為你用的是 <input>，所以要改變上面的文字必須更改 value 屬性！
+        if (infoBox.classList.contains('show')) {
+            btn.value = '收起資訊';
+        } else {
+            btn.value = '查看資訊';
+        }
+    });
+</script>
+</body>
+
+</html>
