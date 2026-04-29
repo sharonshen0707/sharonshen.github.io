@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<head>
+    <style>
+        .box {
+            border: 1px solid #b3b3b3;
+            width: 180px;
+            padding: 30px 20px;
+            text-align: center;
+        }
+        #displayText {
+            font-size: 28px;
+            color: #000000;
+            margin-bottom: 30px;
+        }
+        #actionBtn {
+            font-size: 16px;
+            padding: 4px 15px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+    <div id="displayText">Hello</div>
+        
+    <button id="actionBtn"
+            onmouseover="document.getElementById('displayText').style.color = '#ff00ff';"
+            onmouseout="if(document.getElementById('displayText').innerHTML === 'Hello') document.getElementById('displayText').style.color = 'Black';"
+            onclick="document.getElementById('displayText').innerHTML = 'Mouse Click'; document.getElementById('displayText').style.color = '#ff00ff';">
+        Button
+    </button>
+    
+    </div>
+</body>
+</html>
