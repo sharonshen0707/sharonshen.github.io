@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Object Manipulation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            padding: 30px;
+            color: #333;
+        }
+
+        /* 用來顯示程式碼結果的區塊 */
+        pre {
+            background-color: #eef2f5;
+            padding: 10px;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>1. 原始物件的屬性 (Properties)</h2>
+        <div id="step1-output"></div>
+
+        <h2>2. 刪除 "age" 屬性後的物件</h2>
+        <pre id="step2-output"></pre>
+    </div>
+
+    <script>
+        // 題目給定的原始物件
+        var Person = {
+            firstName : "Tony",
+            lastName : "Lee",
+            age : 50,
+            eyeColor : "Blue"
+        };
+
+        // --- 任務 1：列出所有屬性 ---
+        // 使用 Object.keys() 會回傳一個包含所有屬性名稱的陣列：["firstName", "lastName", "age", "eyeColor"]
+        // 用 join(', ') 把陣列變成字串印出來
+        let properties = Object.keys(Person).join(', ');
+        document.getElementById('step1-output').textContent = properties;
+
+        // --- 任務 2：刪除 age 屬性 ---
+        // 使用 delete 關鍵字來刪除物件中的特定屬性
+        delete Person.age;
+
+        // --- 任務 3：印出刪除後的物件 ---
+        // 使用 JSON.stringify 將物件轉換成文字格式，後面的 null, 4 是為了讓它有漂亮的縮排
+        document.getElementById('step2-output').textContent = JSON.stringify(Person, null, 4);
+    </script>
+
+</body>
+</html>
